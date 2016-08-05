@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On 
+RewriteBase /web-sekolah/
+RewriteRule ^news/?(.*)\.html$ detailnews.php?news=$1
+RewriteRule ^prestasi/?(.*)\.html$ detailprestasi.php?prestasi=$1
+RewriteRule ^prestasi/?$ prestasi.php
+RewriteRule page/(.*)/?$ prestasi.php?page=$1
+RewriteRule ^kategori([0-9]+)-(.*)\.html$ kategorinews.php?id=$1
+RewriteRule news/kategori/([A-Za-z0-9-]+)$ kategorinews.php?tags=$1
+RewriteRule ^prestasi([0-9]+)-(.*)\.html$ detailprestasi.php?id=$1
+RewriteRule ^news/?$ news.php
+RewriteRule ^gallery/?$ gallery.php
+RewriteRule pag/(.*)/?$ gallery.php?pag=$1
+RewriteRule ^search/?$ news-search.php
+RewriteRule ^berita/search/([A-Za-z0-9-]+)$ news_search.php?keyword=$1
+RewriteRule ^berita/search/([A-Za-z0-9-]+)/([0-9]+)$ news_search.php?keyword=$1&pages=$2
+
+RewriteRule pages/(.*)/?$ news.php?pages=$1
+RewriteRule news/kategori/([A-Za-z0-9-]+)/([0-9]+)$ kategorinews.php?tags=$1&pag=$2
+
+RewriteRule ^home.html$ index.php [L]
+RewriteRule ^about.html$ about.php [L]
+RewriteRule ^contact.html$ contact.php [L]
+RewriteRule ^login_siswa.html$ login_siswa.php [L]
+RewriteRule ^login_guru.html$ login_guru.php [L]
+RewriteRule ^datasiswa.html$ datasiswa.php [L]
+RewriteRule ^registrasi.html$ registrasi.php [L]
+
+
+
+
+
